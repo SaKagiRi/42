@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: knakto <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/18 00:20:37 by knakto            #+#    #+#             */
-/*   Updated: 2024/07/18 05:29:48 by knakto           ###   ########.fr       */
+/*   Created: 2024/07/19 14:17:22 by knakto            #+#    #+#             */
+/*   Updated: 2024/07/19 14:51:18 by knakto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	unsigned int	i;
 
 	i = 0;
-	while (src[i] != '\0' && i <= n)
+	while (src[i] != '\0' && i < n)
 	{
 		dest[i] = src[i];
 		i++;
@@ -29,11 +29,10 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 }
 /*
 #include <stdio.h>
-int	main()
+int	main(int argc, char *argv[])
 {
-	char b[] = "hello world";
-	char *a;
-	ft_strncpy(a, b, 5);
-	printf("%s",a);
+	char a[100];
+	printf("%s\n",ft_strncpy(a, argv[argc - 1], 5));
+	printf("%s", a);
 }
 */

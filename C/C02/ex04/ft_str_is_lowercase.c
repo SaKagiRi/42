@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: knakto <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/18 04:57:30 by knakto            #+#    #+#             */
-/*   Updated: 2024/07/18 05:01:39 by knakto           ###   ########.fr       */
+/*   Created: 2024/07/21 19:32:06 by knakto            #+#    #+#             */
+/*   Updated: 2024/07/21 20:08:14 by knakto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,21 @@ int	ft_str_is_lowercase(char *str)
 	int	i;
 
 	i = 0;
-	while (*str++)
+	while (str[i] != '\0')
 	{
-		if (!(str[i] >= 97 && str[i] <= 122))
+		if (!(str[i] >= 'a' && str[i] <= 'z'))
 		{
 			return (0);
-			break ;
 		}
 		i++;
 	}
 	return (1);
 }
+/*
+#include <stdio.h>
+
+int	main(int argc, char *argv[])
+{
+	printf("%d",ft_str_is_lowercase(argv[argc - 1]));
+}
+*/

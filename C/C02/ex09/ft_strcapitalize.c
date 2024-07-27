@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: knakto <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/18 15:02:24 by knakto            #+#    #+#             */
-/*   Updated: 2024/07/18 21:28:20 by knakto           ###   ########.fr       */
+/*   Created: 2024/07/21 20:36:57 by knakto            #+#    #+#             */
+/*   Updated: 2024/07/21 20:57:56 by knakto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	*ft_strcapitalize(char *str)
 {
@@ -19,22 +17,26 @@ char	*ft_strcapitalize(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (i == 0)
-			if (str[i] >= 97 && str[i] <= 122)
-				str[i] = str[i] - 32;
-		else if (str[i] >= 65 && str[i] <= 90)
-			str[i] = str[i] + 32;
-		else if ((str[i - 1] >= 1 && str[i - 1] <= 47)
-			|| (str[i] >= 58 && str[i] <= 64) || (str[i] >= 123))
-			if (str[i] >= 97 && str[i] <= 122)
-				str[i] = str[i] - 32;
+		if ((str[i] >= 'a' && str[i] <= 'z')
+			|| (str[i] >= 'A' && str[i] <= 'Z'))
+		{
+			if (str[i] >= 'A' && str[i] <= 'Z')
+				str[i] += 'a' - 'A';
+			if (i == 0)
+				str[i] -= 'a' - 'A';
+			else if (!((str[i - 1] >= '0' && str[i - 1] <= '9')
+					|| (str[i - 1] >= 'a' && str[i - 1] <= 'z')
+					|| (str[i - 1] >= 'A' && str[i - 1] <= 'Z')))
+				str[i] -= 'a' - 'A';
+		}
 		i++;
 	}
 	return (str);
 }
 /*
-int	main()
+#include <stdio.h>
+int	main(int argc, char *argv[])
 {
-	char a[] = "Hello";
-	printf("%s",ft_strcapitalize(a));
-}*/
+	printf("%s", ft_strcapitalize(argv[argc - 1]));
+}
+*/

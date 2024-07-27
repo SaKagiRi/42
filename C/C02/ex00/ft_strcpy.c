@@ -5,23 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: knakto <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 22:48:48 by knakto            #+#    #+#             */
-/*   Updated: 2024/07/18 04:54:44 by knakto           ###   ########.fr       */
+/*   Created: 2024/07/19 01:21:58 by knakto            #+#    #+#             */
+/*   Updated: 2024/07/22 02:32:15 by knakto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 char	*ft_strcpy(char *dest, char *src)
 {
-	dest = src;
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
 	return (dest);
 }
 /*
-#include <stdio.h>
-
-int	main()
+int	main(int argc, char *argv[])
 {
-	char *a;
-	char *b = "hello";
-	printf("%s",ft_strcpy(a,b));
+	char c[100];
+	ft_strcpy(c, argv[argc - 1]);
+	printf("%s",c);
 }
 */
